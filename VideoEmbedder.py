@@ -77,10 +77,9 @@ def similarity(query_emb, image_emb):
     return util.cos_sim(query_emb, image_emb)
 
 
-#def balls():
-    x = VideoVector(r"C:\Users\amiel\PycharmProjects\PythonProject\SearchEngine\VideoSearchEngine\Videos\A Way Out 2025.12.27 - 17.18.54.03.DVR.mp4")
-    print(type(x))
-    print(len(x))
-    print(x)
+#x = VideoVector(r"C:\Users\amiel\PycharmProjects\PythonProject\SearchEngine\VideoSearchEngine\Videos\A Way Out 2025.12.27 - 17.18.54.03.DVR.mp4")
+#print(type(x))
+#print(len(x))
+#print(x)
 
 
