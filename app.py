@@ -22,7 +22,6 @@ class App:
         else:
             self.show_search_screen()
 
-    # ---------- INIT ----------
     def show_init_screen(self):
         self.clear()
 
@@ -36,7 +35,6 @@ class App:
             messagebox.showinfo("Done", "Video DB created!")
             self.show_search_screen()
 
-    # ---------- SEARCH ----------
     def show_search_screen(self):
         self.clear()
 
@@ -54,7 +52,6 @@ class App:
 
         video_paths = VideoRetriever.search(query, DB_FILE, top=1)
 
-        # clear old
         for w in self.video_widgets:
             w["frame"].destroy()
         self.video_widgets.clear()
@@ -63,10 +60,8 @@ class App:
             container = tk.Frame(self.frame)
             container.pack(side="left", padx=10)
 
-            # show path
             tk.Label(container, text=path, wraplength=200).pack()
 
-            # video display label
             video_label = tk.Label(container)
             video_label.pack()
 
@@ -82,7 +77,6 @@ class App:
 
             self.play_video(widget)
 
-    # ---------- VIDEO LOOP ----------
     def play_video(self, widget):
         cap = widget["cap"]
         label = widget["label"]
@@ -103,10 +97,8 @@ class App:
             label.config(image=tk_img)
             label.image = tk_img
 
-        # loop every 30 ms
         self.root.after(30, lambda: self.play_video(widget))
 
-    # ---------- UTIL ----------
     def clear(self):
         for widget in self.root.winfo_children():
             widget.destroy()
